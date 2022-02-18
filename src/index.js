@@ -3,4 +3,9 @@ const refinedText = {
     sentiment: '',
 }
 
-console.log(refinedText)
+const additionText = {
+    ...refinedText,
+    errors: 0
+}
+
+console.log(additionText)
