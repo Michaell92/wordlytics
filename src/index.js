@@ -1,3 +1,5 @@
+// import './scss/index.scss';
+
 const refinedText = {
     grammar: '',
     sentiment: '',
