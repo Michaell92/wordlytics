@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordlytics</title>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav class="navbar-main">
+            <ul class="navbar-main-list">
+                <li>Wordlytics</li>
+                <li>About</li>
+                <li>GitHub</li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+        <!-- SECTION 1 -->
+        <section id="section-1">
+
+            <!-- SECONDARY NAVBAR -->
+            <nav class="navbar-secondary">
+                <ul class="navbar-secondary-list">
+                    <li>Fix Grammar</li>
+                    <li>Count Letters/Words</li>
+                    <li>Give Sentiment</li>
+                </ul>
+            </nav>
+        </section>
+
+        <!-- SECTION 2 -->
+        <section id="section-2">
+            <!-- TEXT -->
+            <div id="textContainer">
+                <div id="text"></div>
+                <div id="check">CHECK</div>
+            </div>
+
+            <!-- RESULTS -->
+            <div class="results">
+
+                <ul class="results-list">
+                    <li>Grammar accuracy: <span id="grammar-accuracy"></span></li>
+                    <li>Letters: <span id="letter-count"></span></li>
+                    <li>Words: <span id="word-count"></span></li>
+                    <li>Sentiment: <span id="sentiment"></span></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <script src="./bundle.js"></script>
+</body>
+</html>

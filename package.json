@@ -1,20 +1,22 @@
 {
   "scripts": {
-    "serve": "webpack serve",
-    "watch": "webpack --watch",
-    "build": "NODE_ENV=production webpack",
-    "build-dev": "webpack"
+    "serve": "webpack serve --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.3",
-    "@babel/preset-env": "^7.16.11",
-    "babel-loader": "^8.2.3",
-    "css-loader": "^6.6.0",
-    "mini-css-extract-plugin": "^2.5.3",
-    "sass": "^1.49.8",
+    "css-loader": "^6.7.1",
+    "mini-css-extract-plugin": "^2.6.0",
+    "node-sass": "^7.0.1",
     "sass-loader": "^12.6.0",
-    "webpack": "^5.69.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.69.1",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.4"
+  },
+  "dependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "axios": "^0.26.1",
+    "babel-loader": "^8.2.3"
   }
 }

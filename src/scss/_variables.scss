@@ -1,1 +1,21 @@
-$color-main: rgb(226, 236, 240);
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Varela+Round&display=swap');
+
+$font-stack: 'Comfortaa', cursive;
+$font-stack-s: 'Varela Round', sans-serif;
+$light-color: #f4f4f4;
+$primary-color: #036ffc;
+$secondary-color: rgb(37, 12, 57);
+$primary-light: (lighten($primary-color, 40%));
+
+@function set-text-color($color) {
+  @if (lightness($color) > 70) {
+    @return (lighten(#000, 10%));
+  } @else {
+    @return $light-color;
+  }
+}
+
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color);
+}

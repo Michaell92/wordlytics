@@ -1,0 +1,26 @@
+@import 'reset';
+@import 'variables';
+
+// UTILITIES
+.container {
+    padding: 50px;
+    margin: 10px auto;
+    overflow: hidden;
+  }
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// MAIN
+
+header {
+    background: $primary-color;
+}
+
+main {
+    background-color: $light-color;
+    font-family: $font-stack;
+}
