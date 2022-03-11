@@ -4,32 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
     <title>Wordlytics</title>
 </head>
 <body>
 
     <!-- HEADER -->
     <header>
-        <nav class="navbar-main">
-            <ul class="navbar-main-list">
+        <nav id="navbar-main">
+            <ul id="navbar-main-list">
                 <li>Wordlytics</li>
                 <li>About</li>
-                <li>GitHub</li>
+                <li><a href="https://github.com/Michaell92/wordlytics" target="_blank" >GitHub</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- MAIN -->
     <main>
+        <div class="container">
+            
         <!-- SECTION 1 -->
         <section id="section-1">
 
             <!-- SECONDARY NAVBAR -->
-            <nav class="navbar-secondary">
-                <ul class="navbar-secondary-list">
-                    <li>Fix Grammar</li>
-                    <li>Count Letters/Words</li>
-                    <li>Give Sentiment</li>
+            <nav id="navbar-secondary">
+                <ul id="navbar-secondary-list">
+                    <!-- SWITCHES -->
+                    <li><span>Fix Grammar</span>
+                        <div class="toggler-container">
+                            <label class="toggle">
+                                <input type="checkbox">
+                                <div class="circle"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li><span>Count Letters/Words</span>
+                        <div class="toggler-container">
+                            <label class="toggle">
+                                <input type="checkbox">
+                                <div class="circle"></div>
+                            </label>
+                        </div>
+                    </li>
+                    <li><span>Give Sentiment</span>
+                        <div class="toggler-container">
+                            <label class="toggle">
+                                <input type="checkbox">
+                                <div class="circle"></div>
+                            </label>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </section>
@@ -53,6 +78,7 @@
                 </ul>
             </div>
         </section>
+     </div>
     </main>
     <script src="./bundle.js"></script>
 </body>

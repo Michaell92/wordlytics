@@ -3,7 +3,8 @@ const path = require('path');
 module.exports = {
     mode: "development",
 
-    entry: path.resolve(__dirname, './src/js/index.js'),
+    entry: [path.resolve(__dirname, './src/js/index.js'),
+            path.resolve(__dirname, './src/scss/global.scss')],
     module: {
         rules: [
             {
@@ -14,7 +15,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\scss$/,
+                test: /\.(sc|c)ss$/,
                 use: [
                     "style-loader",
                     "css-loader",
