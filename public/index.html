@@ -34,7 +34,7 @@
                     <li><span>Fix Grammar</span>
                         <div class="toggler-container">
                             <label class="toggle">
-                                <input type="checkbox">
+                                <input type="checkbox" checked>
                                 <div class="circle"></div>
                             </label>
                         </div>
@@ -42,7 +42,7 @@
                     <li><span>Count Letters/Words</span>
                         <div class="toggler-container">
                             <label class="toggle">
-                                <input type="checkbox">
+                                <input type="checkbox" checked>
                                 <div class="circle"></div>
                             </label>
                         </div>
@@ -57,26 +57,29 @@
                     </li>
                 </ul>
             </nav>
+
+            <!-- RESULTS -->
+
+            <ul id="results">
+                <li>Grammar accuracy: <span id="grammar-accuracy"></span></li>
+                <li>Letters: <span id="letter-count"></span></li>
+                <li>Words: <span id="word-count"></span></li>
+                
+            </ul>
+
+            <div id="sent">Sentiment: <span id="sentiment"></span></div>
+            
         </section>
 
         <!-- SECTION 2 -->
         <section id="section-2">
             <!-- TEXT -->
-            <div id="textContainer">
-                <div id="text"></div>
-                <div id="check">CHECK</div>
+            <div id="text-container">
+                <textarea id="text" placeholder="Enter text for analysis..."></textarea>
+                <button id="check">CHECK</button>
             </div>
 
-            <!-- RESULTS -->
-            <div class="results">
-
-                <ul class="results-list">
-                    <li>Grammar accuracy: <span id="grammar-accuracy"></span></li>
-                    <li>Letters: <span id="letter-count"></span></li>
-                    <li>Words: <span id="word-count"></span></li>
-                    <li>Sentiment: <span id="sentiment"></span></li>
-                </ul>
-            </div>
+            
         </section>
      </div>
     </main>

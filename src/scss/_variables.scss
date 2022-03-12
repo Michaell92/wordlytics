@@ -19,3 +19,57 @@ $primary-light: (lighten($primary-color, 40%));
   background-color: $color;
   color: set-text-color($color);
 }
+
+/* ----------------------------------------------------------------
+	Breakpoints - vars
+-----------------------------------------------------------------*/
+$screen-sm-min: 640px;
+$screen-md-min: 768px;
+$screen-lg-min: 1024px;
+$screen-xl-min: 1280px;
+$screen-xxl-min: 1536px;
+$screen-xxxl-min: 1920px;
+$screen-xxxxl-min: 2200px;
+
+/* ----------------------------------------------------------------
+	Breakpoints - mixins
+    for different variables, include as:
+    @include screen-lg {
+    foo: bar;
+    }
+-----------------------------------------------------------------*/
+@mixin screen-sm {
+  @media screen and (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+@mixin screen-md {
+  @media screen and (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+@mixin screen-lg {
+  @media screen and (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+@mixin screen-xl {
+  @media screen and (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+@mixin screen-xxl {
+  @media screen and (min-width: #{$screen-xxl-min}) {
+    @content;
+  }
+}
+@mixin screen-xxxl {
+  @media screen and (min-width: #{$screen-xxxl-min}) {
+    @content;
+  }
+}
+@mixin screen-xxxxl {
+  @media screen and (min-width: #{$screen-xxxxl-min}) {
+    @content;
+  }
+}
