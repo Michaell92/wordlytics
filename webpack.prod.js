@@ -5,7 +5,8 @@ module.exports = {
     mode: "production",
 
     entry: [path.resolve(__dirname, './src/js/index.js'),
-            path.resolve(__dirname, './src/scss/global.scss')],
+    path.resolve(__dirname, './src/scss/global.scss')],
+    
     module: {
         rules: [
             {

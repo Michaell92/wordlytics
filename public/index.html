@@ -1,88 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./main.css" />
     <title>Wordlytics</title>
-</head>
-<body>
+  </head>
+
+  <body>
+    <!-- MOBILE NAVBAR -->
+    <!-- HAMBURGER ICON -->
+    <div id="nav-mobile">
+      <div class="line line-1"></div>
+      <div class="line line-2"></div>
+      <div class="line line-3"></div>
+    </div>
+
+    <!-- MENU -->
+    <nav id="mobile-menu" class="menu hideMenu">
+      <a href="index.html">Check Grammar</a>
+      <a href="speedtest.html">Speed Test</a>
+
+      <a href="https://github.com/Michaell92/wordlytics" target="_blank"
+        >GitHub</a
+      >
+    </nav>
 
     <!-- HEADER -->
     <header>
-        <nav id="navbar-main">
-            <ul id="navbar-main-list">
-                <li>Wordlytics</li>
-                <li>About</li>
-                <li><a href="https://github.com/Michaell92/wordlytics" target="_blank" >GitHub</a></li>
-            </ul>
-        </nav>
+      <nav id="navbar-main">
+        <ul id="navbar-main-list">
+          <li><a href="index.html">Wordlytics</a></li>
+          <li><a href="index.html">Check Grammar</a></li>
+          <li><a href="speedtest.html">Speed Test</a></li>
+          <li>
+            <a href="https://github.com/Michaell92/wordlytics" target="_blank"
+              >GitHub</a
+            >
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <!-- MAIN -->
     <main>
-        <div class="container">
-            
+      <div class="container">
         <!-- SECTION 1 -->
         <section id="section-1">
-
-            <!-- SECONDARY NAVBAR -->
-            <nav id="navbar-secondary">
-                <ul id="navbar-secondary-list">
-                    <!-- SWITCHES -->
-                    <li><span>Fix Grammar</span>
-                        <div class="toggler-container">
-                            <label class="toggle">
-                                <input type="checkbox" checked>
-                                <div class="circle"></div>
-                            </label>
-                        </div>
-                    </li>
-                    <li><span>Count Letters/Words</span>
-                        <div class="toggler-container">
-                            <label class="toggle">
-                                <input type="checkbox" checked>
-                                <div class="circle"></div>
-                            </label>
-                        </div>
-                    </li>
-                    <li><span>Give Sentiment</span>
-                        <div class="toggler-container">
-                            <label class="toggle">
-                                <input type="checkbox">
-                                <div class="circle"></div>
-                            </label>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-
-            <!-- RESULTS -->
-
-            <ul id="results">
-                <li>Grammar accuracy: <span id="grammar-accuracy"></span></li>
-                <li>Letters: <span id="letter-count"></span></li>
-                <li>Words: <span id="word-count"></span></li>
-                
+          <!-- SECONDARY NAVBAR -->
+          <nav id="navbar-secondary">
+            <ul id="navbar-secondary-list">
+              <!-- SWITCHES -->
+              <li>
+                <span>Fix Grammar</span>
+                <div class="toggler-container">
+                  <label class="toggle">
+                    <input type="checkbox" id="grammar" checked />
+                    <div class="circle"></div>
+                  </label>
+                </div>
+              </li>
+              <li>
+                <span>Count Letters/Words</span>
+                <div class="toggler-container">
+                  <label class="toggle">
+                    <input type="checkbox" id="count" checked />
+                    <div class="circle"></div>
+                  </label>
+                </div>
+              </li>
+              <li>
+                <span>Give Sentiment</span>
+                <div class="toggler-container">
+                  <label class="toggle">
+                    <input type="checkbox" id="sentiment" />
+                    <div class="circle"></div>
+                  </label>
+                </div>
+              </li>
             </ul>
+          </nav>
 
-            <div id="sent">Sentiment: <span id="sentiment"></span></div>
-            
+          <!-- RESULTS -->
+
+          <ul id="results">
+            <li>Grammar accuracy: <span id="grammar-accuracy"></span></li>
+            <li>Letters: <span id="letter-count"></span></li>
+            <li>Words: <span id="word-count"></span></li>
+          </ul>
+
+          <div id="sent">Sentiment: <span id="sentimentResult"></span></div>
         </section>
 
         <!-- SECTION 2 -->
         <section id="section-2">
-            <!-- TEXT -->
-            <div id="text-container">
-                <textarea id="text" placeholder="Enter text for analysis..."></textarea>
-                <button id="check">CHECK</button>
+          <!-- TEXT -->
+          <div class="text-container">
+            <textarea
+              id="grammarText"
+              class="text"
+              placeholder="Enter text for analysis..."
+            ></textarea>
+            <div id="buttons">
+              <button id="check" class="check">CHECK</button>
+              <button id="reset" class="restart">Reset</button>
             </div>
-
-            
+          </div>
         </section>
-     </div>
+      </div>
     </main>
     <script src="./bundle.js"></script>
-</body>
+  </body>
 </html>

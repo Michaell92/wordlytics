@@ -1,185 +1,240 @@
-@import 'reset';
-@import 'variables';
-
-
+@import "reset";
+@import "variables";
+@import "menu";
 
 // UTILITIES
 .container {
-    padding: 3rem 1.5rem;
-    margin: 0.25rem auto;
-    overflow: hidden;
-  }
+  padding: 3rem 1.5rem;
+  margin: 0.25rem auto;
+  overflow: hidden;
+}
 
 @mixin flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 // MAIN
 
 header {
-    background: $primary-color;
-    font-family: $font-stack-s;
-    color: $primary-light;
-    font-weight: bold;
-    font-size: 1.4rem;
-    padding: 1.5rem 1.5rem;
+  background: $primary-color;
+  font-family: $font-stack-s;
+  color: $primary-light;
+  font-weight: bold;
+  font-size: 1.4rem;
+  padding: 1.5rem 1.5rem;
 }
 
 // MAIN NAV
 #navbar-main-list {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    margin-bottom: -2px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: -2px;
 
-    li {
-        border-bottom: 2px solid transparent;
-    }
+  li {
+    border-bottom: 2px solid transparent;
+    margin: 0 1rem;
+  }
 
-    li:hover {
-       border-color: $primary-light;
-        cursor: pointer;
-    }
+  li:hover {
+    border-color: $primary-light;
+    cursor: pointer;
+  }
 
-    li:not(:nth-child(3)) {
-        margin-right: 0.7rem;
-    }
+  li:not(:nth-child(4)) {
+    margin-right: 0.7rem;
+  }
 
-    li:nth-child(3) {
-        margin-left: auto;
+  li:nth-child(4) {
+    margin-left: auto;
+  }
+
+  li:not(:first-child) {
+    @media screen and (max-width: 500px) {
+      display: none;
     }
-     
- }
- 
+  }
+}
+
 // MAIN SECTION
 main {
-    background-color: $light-color;
-    font-family: $font-stack;
-    color: $secondary-color;
-    font-size: 1.1rem;
-    height: 100vh;
+  background-color: $light-color;
+  font-family: $font-stack;
+  color: $secondary-color;
+  font-size: 1.1rem;
+  height: 100vh;
 
-    #section-1 {
+  #section-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @include screen-sm {
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    #navbar-secondary-list {
+      li {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 38%;
+        width: 15rem;
+        margin: 0.5rem 0;
 
-        @include screen-sm {
-            flex-direction: row;
-            justify-content: space-around;
+        // TOGGLER
+        .toggler-container {
+          display: flex;
+
+          input {
+            display: none;
+            opacity: 0;
+          }
+
+          .toggle {
+            font-size: 20px;
+            width: 2.4rem;
+            background-color: lightgray;
+            border-radius: 1rem;
+            cursor: pointer;
+          }
+
+          .circle {
+            height: 1.2rem;
+            width: 1.2rem;
+            border-radius: 50%;
+            background-color: #fff;
+            transition: all 300ms;
+          }
+
+          .toggle input:checked + div {
+            transform: translateX(100%);
+            background-color: green;
+          }
         }
-
-#navbar-secondary-list {
-        li {
-            display: flex;
-            justify-content: space-between;
-            width: 38%;
-            width: 15rem;
-            margin: 0.5rem 0;
-
-            // TOGGLER
-            .toggler-container {
-                display: flex;
-
-                input {
-                    display: none;
-                    opacity: 0;
-                }
-
-                .toggle {
-                    font-size: 20px;
-                    width: 2.4rem;
-                    background-color: lightgray;
-                    border-radius: 1rem;
-                    cursor: pointer;
-                }
-
-                .circle {
-                    height: 1.2rem;
-                    width: 1.2rem;
-                    border-radius: 50%;
-                    background-color: #fff;
-                    transition: all 300ms;
-                }
-
-                .toggle input:checked + div {
-                    transform: translateX(100%);
-                    background-color: green;
-                }
-         }
-        }
+      }
     }
 
     // RESULTS
     #results {
-        margin: 1rem 0;
+      margin: 1rem 0;
+
+      @include screen-sm {
+        margin: 0;
+      }
+      li {
+        margin: 0.5rem 0;
+      }
+    }
+
+    #sent {
+      font-size: 1.3rem;
+      align-self: center;
+      text-align: center;
+
+      @include screen-sm {
+        flex: 1 1 100%;
+        margin-top: 2.5rem;
+      }
+    }
+  }
+
+  #section-2 {
+    // TEXT BOX CONTAINER
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 1.5rem;
+
+      // TEXT BOX
+      .text {
+        width: 80vw;
+        height: 20vh;
+        padding: 1rem;
+        margin: 1.3rem 0;
+        font-family: "Courier New", Courier, monospace;
 
         @include screen-sm {
-            margin: 0;
+          width: 70vw;
         }
-        li {
-            margin: 0.5rem 0;
-        }
-     }
 
-     #sent {
-         font-size: 1.3rem;
-         align-self: center;
-         text-align: center;
-
-         @include screen-sm {
-         flex: 1 1 100%;
-         margin-top: 2.5rem;
+        @include screen-lg {
+          width: 60vw;
         }
-     }
+
+        @include screen-xl {
+          width: 50vw;
+        }
+      }
+
+      .check {
+        cursor: pointer;
+        background: rgb(45, 172, 45);
+        padding: 10px;
+        border-radius: 7px;
+        font-weight: bold;
+        color: $light-color;
+        width: 7rem;
+      }
     }
-    
+  }
+}
 
-    #section-2 {
+// SPEED TEST
 
-        // TEXT BOX CONTAINER
-        #text-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 1.5rem;
+#section-1-speed-test {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-            // TEXT BOX
-            #text {
-                width: 80vw;
-                height: 20vh;
-                padding: 1rem;
-                margin: 1.3rem 0;
-                font-family: 'Courier New', Courier, monospace;
+  @include screen-sm {
+    flex-direction: row;
+    justify-content: space-around;
+  }
 
-                @include screen-sm {
-                    width: 70vw;
-                }
+  #speed-results {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 
-                @include screen-lg {
-                    width: 60vw;
-                }
-
-                @include screen-xl {
-                    width: 50vw;
-                }
-
-                
-            }
-
-            #check {
-                cursor: pointer;
-                background: rgb(45, 172, 45);
-                padding: 10px;
-                border-radius: 7px;
-                font-weight: bold;
-                color: $light-color;
-                width: 7rem;
-        }
-        }
-        
+    @include screen-lg {
+      flex-direction: row;
     }
+
+    li {
+      margin: 0.5rem 1rem;
+    }
+  }
+
+  #sent-speed-test {
+    font-size: 1.3rem;
+    align-self: center;
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
+
+#dummy-text {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin: 1rem 0;
+  color: gray;
+}
+
+#buttons {
+  @include flex-center;
+  width: 40%;
+
+  .restart {
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: rgb(187, 179, 179);
+    color: $light-color;
+    margin-left: auto;
+  }
 }
