@@ -17,9 +17,9 @@ export default {
     // Call api
     axios
       .request(options.grammar(grammarText))
-      .then(function (response) {
+      .then(function (res) {
         // Get mistakes and calculate accuracy
-        grammarCorrection(response, grammarText);
+        grammarCorrection(res, grammarText);
       })
       .catch((err) => console.log(err));
   },
@@ -38,7 +38,14 @@ export default {
   },
 
   sentiment: () => {
-    console.log("sentiment");
+    const grammarText = document.getElementById("grammarText").innerText;
+
+    axios
+      .request(options.sentiment(grammarText))
+      .then(function (res) {
+        getSentiment(res);
+      })
+      .catch((err) => console.log(err));
   },
 
   // Reset results
@@ -58,7 +65,7 @@ function grammarCorrection(response, grammarText) {
   const wordCount = countWords(grammarText);
 
   // Calculate accuracy
-  const accuracyCalc = math.round(100 - (mistakes / wordCount) * 100);
+  const accuracyCalc = Math.round(100 - (mistakes / wordCount) * 100);
 
   // Edit css
   let color = "";
@@ -131,4 +138,16 @@ function countWords(grammarText) {
   }
 
   return wordCount;
+}
+
+function getSentiment(res) {
+  let positive = null;
+  const pos = res.data.pos_percent;
+  const neg = res.data.neg_percent;
+
+  pos > neg
+    ? sentimentResult.setAttribute("src", "./img/happy.png")
+    : neg > pos
+    ? sentimentResult.setAttribute("src", "./img/sad.png")
+    : sentimentResult.setAttribute("src", "./img/neutral.png");
 }

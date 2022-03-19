@@ -131,6 +131,8 @@ main {
     }
 
     #sent {
+      @include flex-center;
+      flex-direction: column;
       font-size: 1.3rem;
       align-self: center;
       text-align: center;
@@ -138,11 +140,20 @@ main {
       @include screen-sm {
         flex: 1 1 100%;
         margin-top: 2.5rem;
+        flex-direction: row;
       }
 
       .sentimentDescr {
         font-size: 1rem;
         // color: gray;
+      }
+
+      #sentimentResult {
+        margin-top: 1rem;
+
+        @include screen-sm {
+          margin: 0 0 0 1rem;
+        }
       }
     }
   }
