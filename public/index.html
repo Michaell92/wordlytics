@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="./css/global.css" />
     <title>Wordlytics</title>
   </head>
 
@@ -74,7 +74,7 @@
                 <span>Give Sentiment</span>
                 <div class="toggler-container">
                   <label class="toggle">
-                    <input type="checkbox" id="sentiment" />
+                    <input type="checkbox" id="sentiment" checked />
                     <div class="circle"></div>
                   </label>
                 </div>
@@ -86,22 +86,30 @@
 
           <ul id="results">
             <li>Grammar accuracy: <span id="grammar-accuracy"></span></li>
-            <li>Letters: <span id="letter-count"></span></li>
-            <li>Words: <span id="word-count"></span></li>
+            <li>Letters: <span id="letter-count" class="blue"></span></li>
+            <li>Words: <span id="word-count" class="blue"></span></li>
           </ul>
 
-          <div id="sent">Sentiment: <span id="sentimentResult"></span></div>
+          <div id="sent">
+            Sentiment
+            <span class="sentimentDescr"
+              >(positivity/negativity of the text):
+            </span>
+            <span id="sentimentResult"></span>
+          </div>
         </section>
 
         <!-- SECTION 2 -->
         <section id="section-2">
           <!-- TEXT -->
           <div class="text-container">
-            <textarea
+            <!-- EDITABLE DIV INSTEAD OF TEXTAREA -->
+            <div
+              contenteditable="true"
               id="grammarText"
               class="text"
-              placeholder="Enter text for analysis..."
-            ></textarea>
+              data-placeholder="Enter text for analysis..."
+            ></div>
             <div id="buttons">
               <button id="check" class="check">CHECK</button>
               <button id="reset" class="restart">Reset</button>
@@ -110,6 +118,6 @@
         </section>
       </div>
     </main>
-    <script src="./bundle.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>

@@ -3,7 +3,9 @@ const menu = document.getElementById("nav-mobile");
 // Mobile menu logic
 import clickMenu from "./mobileMenu.js";
 // Analyze text
-import analyze from "./grammar.js";
+import grammarObj from "./grammar.js";
+// Placeholder function
+// import placeHolder from "./placeholder.js";
 
 // GRAMMAR
 // BUTTONS
@@ -17,19 +19,10 @@ const sentiment = document.getElementById("sentiment");
 
 // TEXT
 const grammarText = document.getElementById("grammarText");
+// const placeholder = grammarText.getAttribute("data-placeholder");
 
-// SPEED
-const start = document.getElementById("start");
-const restart = document.getElementById("restart");
-
-// TEXT
-const speedText = document.getElementById("speedText");
-
-// RESULTS
-const speedAccuracy = document.getElementById("grammarAccuracy");
-const mistakes = document.getElementById("mistakes");
-const speed = document.getElementById("speed");
-const speedSentiment = document.getElementById("speedSentiment");
+// Edit placeholder for main text
+// placeHolder(grammarText, placeholder)
 
 // Event listeners
 
@@ -40,24 +33,24 @@ menu.addEventListener("click", clickMenu);
 check.addEventListener("click", checkTogglers);
 
 // Reset results
-reset.addEventListener("click", analyze.reset);
+reset.addEventListener("click", grammarObj.reset);
 
 // Check for active togglers and analyze text
 function checkTogglers(e) {
   e.preventDefault();
 
-  if (grammarText.value === "") return;
+  if (grammarText.innerText === "") return;
 
   if (grammar.checked) {
-    analyze.checkGrammar();
+    grammarObj.checkGrammar();
   }
 
   if (count.checked) {
-    analyze.count();
+    grammarObj.count();
   }
 
   if (sentiment.checked) {
-    analyze.sentiment();
+    grammarObj.sentiment();
   }
 }
 

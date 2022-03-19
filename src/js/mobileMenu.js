@@ -4,6 +4,4 @@ export default function mobileMenu() {
 
   menu.classList.toggle("hideMenu");
   icon.classList.toggle("hideMenu");
-
-  console.log(menu);
 }

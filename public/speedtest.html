@@ -4,10 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="./css/global.css" />
     <title>Wordlytics</title>
   </head>
   <body>
+    <!-- MOBILE NAVBAR -->
+    <!-- HAMBURGER ICON -->
+    <div id="nav-mobile">
+      <div class="line line-1"></div>
+      <div class="line line-2"></div>
+      <div class="line line-3"></div>
+    </div>
+
+    <!-- MENU -->
+    <nav id="mobile-menu" class="menu hideMenu">
+      <a href="index.html">Check Grammar</a>
+      <a href="speedtest.html">Speed Test</a>
+
+      <a href="https://github.com/Michaell92/wordlytics" target="_blank"
+        >GitHub</a
+      >
+    </nav>
+
     <!-- HEADER -->
     <header>
       <nav id="navbar-main">
@@ -33,27 +51,26 @@
 
           <ul id="speed-results">
             <li>Accuracy: <span id="grammarAccuracy"></span></li>
-            <li>Mistakes: <span id="mistakes"></span></li>
-            <li>Speed: <span id="speed"></span></li>
+            <li>Mistakes: <span id="mistakes" class="red"></span></li>
+            <li>Speed: <span id="speed" class="blue"></span></li>
           </ul>
 
-          <div id="sent-speed-test">
-            Sentiment: <span id="speedSentiment"></span>
-          </div>
+          <div id="sent-speed-test">Time: <span id="timer">60</span>s</div>
         </section>
 
         <!-- SECTION 2 -->
         <section id="section-2">
           <div class="text-container">
             <!-- DUMMY TEXT -->
-            <span id="dummy-text">This is a dummy text</span>
+            <span id="dummy-text">Waiting...</span>
 
             <!-- TEST -->
-            <textarea
+            <div
+              contenteditable="true"
               id="speedText"
               class="text"
-              placeholder="Click start to begin..."
-            ></textarea>
+              data-placeholder="Press start to begin..."
+            ></div>
 
             <div id="buttons">
               <button id="start" class="check">START</button>
@@ -63,6 +80,6 @@
         </section>
       </div>
     </main>
-    <script src="./bundle.js"></script>
+    <script src="./js/speedTest.js"></script>
   </body>
 </html>
