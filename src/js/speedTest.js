@@ -70,10 +70,10 @@ function speedTest() {
 // Add dummy text for the test
 function addDummyText() {
   axios
-    .get(
-      "https://private-anon-dd4a286718-goquotes.apiary-proxy.com/api/v1/random?count=5"
-    )
-    .then((res) => addToHTML(res))
+    .get("https://thesimpsonsquoteapi.glitch.me/quotes?count=10")
+    .then((res) => {
+      addToHTML(res);
+    })
     .catch((err) => {
       console.log(err);
     });
@@ -81,13 +81,13 @@ function addDummyText() {
 
 // Add dummy text to HTML
 function addToHTML(res) {
-  const quotes = res.data.quotes;
+  const quotes = res.data;
   let text = "";
   let finalText = "";
 
   // Loop quotes and concatonate them
   for (let i = 0; i < quotes.length; i++) {
-    text += quotes[i].text + " ";
+    text += quotes[i].quote + " ";
   }
 
   //   Add spans and classes to letters
